@@ -17,7 +17,7 @@ db.once('open', async () => {
         { username: requestAuthor },
         {
           $addToSet: {
-            request: _id,
+            requests: _id,
           },
         }
       );

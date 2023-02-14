@@ -28,12 +28,12 @@ const resolvers = {
         .populate('friends')
         .populate('requests');
     },
-    Request: async (parent, { username }) => {
+    requests: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Request.find(params).sort({ createdAt: -1 });
     },
-    Request: async (parent, { _id }) => {
-      return requests.findOne({ _id });
+    request: async (parent, { _id }) => {
+      return Request.findOne({ _id });
     }
   },
 
@@ -75,7 +75,7 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addReaction: async (parent, { reuqestId, reactionBody }, context) => {
+    addReaction: async (parent, { requestId, reactionBody }, context) => {
       if (context.user) {
         const updatedRequest = await Request.findOneAndUpdate(
           { _id: requestId },
