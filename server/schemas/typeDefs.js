@@ -6,13 +6,13 @@ const typeDefs = gql`
     username: String
     email: String
     friendCount: Int
-    thoughts: [Thought]
+    reuqest: [Request]
     friends: [User]
   }
 
   type Request {
     _id: ID
-    thoughtText: String
+    requestText: String
     createdAt: String
     username: String
   }
