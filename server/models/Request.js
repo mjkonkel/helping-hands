@@ -28,9 +28,9 @@ const requestSchema = new Schema(
     }
   );
   
-  requestSchema.virtual('reactionCount').get(function() {
-    return this.reactions.length;
-  });
+  // requestSchema.virtual('reactionCount').get(function() {
+  //   return this.reactions.length;
+  // });
   
   const Request = model('Request', requestSchema);
   
