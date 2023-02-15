@@ -18,7 +18,7 @@ function Nav(props) {
     <header className="flex-row px-1">
       <h2>
         <a data-testid="link" href="/">
-          <span role="img" aria-label="table flip">( •_•)>⌐■-■ </span> give us a 100 pwease
+          <span role="img" aria-label="table flip">( •_•)⌐■-■ </span> give us a 100 pwease
         </a>
       </h2>
       <nav>

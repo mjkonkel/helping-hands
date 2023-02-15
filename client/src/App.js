@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Nav from './components/NavBar';
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from '../src/pages/Home'
+import Request from '../src/pages/request';
 
 
 
@@ -32,6 +33,7 @@ function App() {
       ></Nav>
       <main>
         <Home />
+        <Request />
       </main>
       
 
