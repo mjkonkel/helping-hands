@@ -51,11 +51,11 @@ export const REMOVE_FRIEND = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+export const ADD_REQUEST = gql`
+  mutation addRequest($requestText: String!) {
+    addRequest(requestText: $requestText) {
       _id
-      thoughtText
+      requestText
       createdAt
       username
       reactionCount
@@ -66,17 +66,17 @@ export const ADD_THOUGHT = gql`
   }
 `;
 
-export const ADD_REACTION = gql`
-  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
-    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
-      _id
-      reactionCount
-      reactions {
-        _id
-        reactionBody
-        createdAt
-        username
-      }
-    }
-  }
-`;
+// export const ADD_REACTION = gql`
+//   mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
+//     addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+//       _id
+//       reactionCount
+//       reactions {
+//         _id
+//         reactionBody
+//         createdAt
+//         username
+//       }
+//     }
+//   }
+// `;
