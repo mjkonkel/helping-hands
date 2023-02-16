@@ -5,7 +5,6 @@ import Home from '../src/pages/Home'
 import Request from '../src/pages/request';
 
 
-
 function App() {
   const [categories] = useState([
     {
@@ -35,8 +34,6 @@ function App() {
         <Home />
         <Request />
       </main>
-      
-
     </div>
   );
 };
