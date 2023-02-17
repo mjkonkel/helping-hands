@@ -20,9 +20,9 @@ export const QUERY_REQUESTS = gql`
 
 export const QUERY_REQUEST = gql`
   query request($id: ID!) {
-    thought(_id: $id) {
+    request(_id: $id) {
       _id
-      thoughtText
+      requestText
       createdAt
       username
       reactionCount

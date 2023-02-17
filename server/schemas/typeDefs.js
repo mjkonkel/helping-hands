@@ -17,6 +17,12 @@ const typeDefs = gql`
     username: String
   }
 
+  type Reaction {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
+  }
 
   type Auth {
     token: ID!
