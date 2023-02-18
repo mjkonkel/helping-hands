@@ -24,7 +24,11 @@
         "apollo": "^2.34.0",
         "bootstrap": "^5.2.3",
         "dotenv": "^16.0.3",
+        "i": "^0.3.7",
         "jwt-decode": "^3.1.2",
-        "react-bootstrap": "^2.7.2"
+        "npm": "^9.5.0",
+        "react-bootstrap": "^2.7.2",
+        "react-carousel3": "^1.0.0",
+        "react-responsive-carousel": "^3.2.23"
     }
 }
