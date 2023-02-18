@@ -2,7 +2,38 @@ import React, { useState } from 'react';
 import Nav from './components/NavBar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from '../src/pages/Home'
-import Request from '../src/pages/request';
+import Request from './pages/request';
+import Login from './pages/Login';
+import Footer from './components/Footer';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+
+//add apollo client
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 
 function App() {
@@ -22,6 +53,7 @@ function App() {
   const [contactSelected, setContactSelected] = useState(false);
 
   return (
+    <ApolloProvider client={client}>
     <div>
       <Nav
         categories={categories}
@@ -32,9 +64,15 @@ function App() {
       ></Nav>
       <main>
         <Home />
-        <Request />
+        <Login />
       </main>
+      <footer>
+<Footer></Footer>
+      </footer>
+      
+
     </div>
+    </ApolloProvider>
   );
 };
 

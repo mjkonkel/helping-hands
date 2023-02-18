@@ -1,5 +1,5 @@
 {
-    "name": "mern-social-media",
+    "name": "helping-hands",
     "version": "1.0.0",
     "description": "",
     "main": "server/server.js",
@@ -21,8 +21,10 @@
         "concurrently": "^5.1.0"
     },
     "dependencies": {
+        "apollo": "^2.34.0",
         "bootstrap": "^5.2.3",
         "dotenv": "^16.0.3",
+        "jwt-decode": "^3.1.2",
         "react-bootstrap": "^2.7.2"
     }
 }
