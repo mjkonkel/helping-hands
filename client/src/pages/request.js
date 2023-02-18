@@ -1,44 +1,76 @@
-import React from 'react';
-// // import "bootstrap/dist/css/bootstrap.min.css"
-// // // import Auth from '../utils/auth';
-// // import { useParams } from 'react-router-dom'
-// // import { useQuery } from '@apollo/client';
-// // import { QUERY_REQUEST } from '../utils/queries';
+import React, { useState } from 'react';
 
-// const request = () => {
-// //     const { id: requestId } = useParams();
+import { useMutation } from '@apollo/client';
+import { ADD_REQUEST } from '../utils/mutations';
+import { QUERY_REQUESTS, QUERY_ME  } from '../utils/queries';
 
-// //   const { loading, data } = useQuery(QUERY_REQUEST, {
-// //     variables: { id: requestId },
-// //   });
+const Request= () => {
+  const [requestText, setText] = useState('');
 
-// //   const request = data?.request || {};
 
-// //   if (loading) {
-// //     return <div>Loading...</div>;
-// //   }
+const [addRequest, { error }] = useMutation(ADD_REQUEST, {
+  update(cache, { data: { addRequest }}){
 
-//     return( 
-//         <div>
-//             <div class="mb-3">
-//   <label for="exampleFormControlInput1" class="form-label">Email address</label>
-//   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-//     </input>
-// </div>
-// <div class="mb-3">
-//   <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-//   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-// </div>
-//         </div> 
-//     );
-// };
+    try { 
+      const { me } = cache.readQuery({query: QUERY_ME});
+      cache.writeQuery({ 
+        query: QUERY_ME,
+        data: { me: { ...me, request: [ ...me.request, 
+        addRequest] } },
+      });
+    } catch (e) { 
+      console.warn("Sorry, Request not valid.")
+    }
+    
+    const { requests } = cache.readQuery({ query:
+    QUERY_REQUESTS});
+    cache.writeQuery({ 
+      query: QUERY_REQUESTS,
+      data: { requests: [addRequest, ...requests]}
+    });
+  }
+})
 
-const Request = () => { 
-    return ( 
-        <div>
-        <h1>hi</h1>
-        </div>  
-    )
-}
+const handleChange  = (event) => {
+  if (event.target.value.length <= 400) {
+    setText(event.target.value);
+    
+  }
+};
 
-export default Request; 
+const handleFormSubmit = async (event) => {
+  event.perventDefault();
+
+  try { 
+    await addRequest({
+      variables: { requestText },
+    });
+    setText('');
+  } catch (e) {
+    console.error(e)
+  }
+};
+
+//fix to match example 
+return (
+    <div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address
+        </label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+        value={requestText}
+        onChange={handleChange}
+        ></input>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">
+        </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        onSubmit={handleFormSubmit}
+        ></textarea>
+      </div>
+    </div>
+  );
+};
+
+export default Request;
