@@ -5,6 +5,8 @@ import Home from '../src/pages/Home'
 import Request from './pages/request';
 import Login from './pages/Login';
 import Footer from './components/Footer';
+import Updates from './pages/Updates';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -65,6 +67,7 @@ function App() {
       <main>
         <Home />
         <Login />
+        <Updates />
       </main>
       <footer>
 <Footer></Footer>
