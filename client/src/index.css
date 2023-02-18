@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+:root {
+  --primary: #03045E;
+  --secondary: #0077B6;
+  --tertiary: #00B4D8;
+  --quatrinary: #90E0EF;
+  --light: #CAF0F8;
+  --dark: #6c7575;
+  --error: rgb(228, 46, 1);
+  --border-radius: 0.3rem;
+  --spacing-one: calc(1rem * 0.25);
+  --spacing-two: calc(1rem * 0.5);
+  --spacing-three: 1rem;
+  --spacing-four: calc(1rem * 1.5);
+  --spacing-five: calc(1rem * 3);
+}
