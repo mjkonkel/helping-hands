@@ -1,4 +1,4 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import family from "../assets/family.jpeg"
 import family1 from "../assets/family1.jpeg"
@@ -12,27 +12,27 @@ const Updates = () => {
             <Carousel>
                 <div>
                     <img src={family}/>
-                    <p className="photos">Legend 1</p>
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
                 <img src={family1}/>
-                    <p className="photos">Legend 2</p>
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
                 <img src={finish}/>
-                    <p className="photos">Legend 3</p>
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
                     <img src={group}/>
-                    <p className="photos">Legend 1</p>
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
                 <img src={kids}/>
-                    <p className="photos">Legend 2</p>
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
                 <img src={kids2}/>
-                    <p className="photos">Legend 3</p>
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
             </Carousel>
         );
