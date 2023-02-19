@@ -9,7 +9,9 @@ import kids2 from "../assets/kids2.jpeg"
 import "../index.css"
 
 const Updates = () => {
+
     return (
+
         <Carousel>
 
             <div className="carousel">
@@ -38,7 +40,9 @@ const Updates = () => {
             </div>
 
         </Carousel>
+
     );
 };
+
 
 export default Updates; 

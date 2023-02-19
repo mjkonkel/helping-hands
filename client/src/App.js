@@ -14,6 +14,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Signup from './pages/signup';
 
 
 //add apollo client
@@ -67,6 +68,7 @@ function App() {
       <main>
         <Home />
         <Login />
+        <Signup />
         <Updates />
       </main>
       <footer>
