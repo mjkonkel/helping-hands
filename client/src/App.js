@@ -7,6 +7,8 @@ import Request from './pages/request';
 import Login from './pages/Login';
 import Footer from './components/Footer';
 import Updates from './pages/Updates';
+import Signup from './pages/signup'
+
 
 import {
   ApolloClient,
@@ -71,6 +73,10 @@ function App() {
               <Route
                 path="/"
                 element={<Home />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
               />
               <Route
                 path="/login"
