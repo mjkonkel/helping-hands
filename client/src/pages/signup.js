@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
+import "../index.css"
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -41,7 +41,7 @@ const Signup = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
         <div className="card">
-          <h4 className="card-header">Sign Up</h4>
+          <h4 className="card-header text-bg-info mb-3">Sign Up</h4>
           <div className="card-body">
             <form onSubmit={handleFormSubmit}>
               <input
@@ -71,7 +71,7 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
+              <button className="btn d-block w-10 btn-primary" type="submit">
                 Submit
               </button>
             </form>

@@ -11,7 +11,7 @@ import "../index.css"
 const Updates = () => {
 
     return (
-
+  
         <Carousel>
 
             <div className="carousel">
