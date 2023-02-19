@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+.photos {
+  width: 15%;
+  height: 15%;
+  border-radius: 90px;
+  color: rgb(33, 158, 188);
+  justify-content: center;
+}
+
+.caption {
+  color: rgb(3, 4, 94);
+}
+
+.carousel {
+  display: block;
+  max-width: 50%;
+  max-height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
