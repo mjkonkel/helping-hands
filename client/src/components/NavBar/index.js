@@ -1,57 +1,35 @@
-import React, { useEffect } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Outlet, Link } from 'react-router-dom';
+import React from 'react'
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Nav(props) {
-  const {
-    categories = [],
-    setCurrentCategory,
-    contactSelected,
-    currentCategory,
-    setContactSelected,
-  } = props;
-
-  useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
-  }, [currentCategory]);
-
+function NavbarHH() {
   return (
-    <header className="flex-row px-1">
-      <h2>
-        <a data-testid="link" href="/">
-          <span role="img" aria-label="table flip">( •_•)>⌐■-■ </span> give us a 100 pwease
-        </a>
-      </h2>
+    <React.Fragment>
+
       <nav>
-        <ul className="flex-row">
-          <li className="mx-2">
-            <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
-              Home
-            </a>
+        <ul>
+          <li>
+            <Link to="/home">Home</Link>
           </li>
-          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-            <span onClick={() => setContactSelected(true)}>Meals</span>
+          <li>
+            <Link to="/login">login</Link>
           </li>
-          {categories.map((category) => (
-            <li
-              className={`mx-1 ${
-                currentCategory.name === category.name && !contactSelected && 'navActive'
-                }`}
-              key={category.name}
-            >
-              <span
-                onClick={() => {
-                  setCurrentCategory(category);
-                  setContactSelected(false);
-                }}
-              >
-                {capitalizeFirstLetter(category.name)}
-              </span>
-            </li>
-          ))}
+          <li>
+            <Link to="/request">request</Link>
+          </li>
+          <li>
+            <Link to="/updates">updates</Link>
+          </li>
         </ul>
       </nav>
-    </header>
+      <Outlet />
+    </React.Fragment>
+
+
   );
 }
 
-export default Nav;
+export default NavbarHH;
