@@ -27,7 +27,7 @@ Finally, there is a donation section for the family for those who wish to provid
 
 ## Installation 
 
-This portfolio was created using React, CSS, Bootstrap and JavaScript The app is deployed on Heroku.
+This app was created using React, CSS, Bootstrap and JavaScript. The app is deployed on Heroku.
 
 ## Usage 
 
@@ -38,11 +38,11 @@ https://github.com/mjkonkel/helping-hands
 
  ## Credits
 
-Janelle Cikanek  https://github.com/janellecikanek  
-Sophie Kedrowski  https://github.com/sophiekedrowski  
-Mitchell Konkel  https://github.com/mjkonkel  
-Rene Maldonado  https://github.com/mattmald  
-Tyler Van Meveren https://github.com/Tvanmeveren  
+[Janelle Cikanek](https://github.com/janellecikanek)<br>
+[Sophie Kedrowski](https://github.com/sophiekedrowski)<br>
+[Mitchell Konkel](https://github.com/mjkonkel)<br>
+[Rene Maldonado](https://github.com/mattmald)<br>
+[Tyler Van Meveren](https://github.com/Tvanmeveren)<br>
   
 ## Questions 
 
