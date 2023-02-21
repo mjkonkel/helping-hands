@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import Nav from './components/NavBar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from '../src/pages/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Request from './pages/request';
 import Login from './pages/Login';
 import Footer from './components/Footer';
+import Updates from './pages/Updates';
+import Signup from './pages/signup'
+
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -54,24 +59,47 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-    <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      ></Nav>
-      <main>
-        <Home />
-        <Login />
-      </main>
-      <footer>
-<Footer></Footer>
-      </footer>
-      
+      <Router>
+        <div>
+          <Nav
+            categories={categories}
+            setCurrentCategory={setCurrentCategory}
+            currentCategory={currentCategory}
+            contactSelected={contactSelected}
+            setContactSelected={setContactSelected}
+          ></Nav>
+          <div>
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/request"
+                element={<Request />}
+              />
+              <Route
+                path="/updates"
+                element={<Updates />}
+              />
+            </Routes>
 
-    </div>
+          </div>
+          <footer>
+            <Footer></Footer>
+          </footer>
+
+
+        </div>
+      </Router>
     </ApolloProvider>
   );
 };
