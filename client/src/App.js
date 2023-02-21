@@ -7,7 +7,8 @@ import Request from './pages/request';
 import Login from './pages/Login';
 import Footer from './components/Footer';
 import Updates from './pages/Updates';
-// import Navbar from 'react-bootstrap/Navbar';
+import Signup from './pages/signup'
+
 
 import {
   ApolloClient,
@@ -74,7 +75,10 @@ function App() {
                 path="home"
                 element={<Home />}
               />
-
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
               <Route
                 path="login"
                 element={<Login />}
