@@ -43,22 +43,6 @@ const client = new ApolloClient({
 
 function App() {
 
-  // console.log(NavbarHH)
-  // const [categories] = useState([
-  //   {
-  //     name: 'Updates',
-  //     description: 'Get updates and stay informed of the people you are caring for!',
-  //   },
-  //   {
-  //     name: 'Photos',
-  //     description: 'Photos of the people you how they are doing!',
-  //   },
-  // ]);
-
-  // const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
-  // const [contactSelected, setContactSelected] = useState(false);
-
   return (
     <ApolloProvider client={client}>
 
