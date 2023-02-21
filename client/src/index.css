@@ -108,7 +108,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--quatrinary);
 }
 /* photo carousel css*/
 .photos {
@@ -158,7 +158,7 @@ font-size: x-large;
 .btn:hover,
 .pill:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--quatrinary);
 }
 
 .btn:hover a,
