@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { useMutation } from '@apollo/client';
 import { ADD_REQUEST } from '../utils/mutations';
 import { QUERY_REQUESTS, QUERY_ME  } from '../utils/queries';
@@ -65,8 +64,10 @@ return (
         <label for="exampleFormControlTextarea1" class="form-label">
         </label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-        onSubmit={handleFormSubmit}
+        
         ></textarea>
+        <button type="button" class="btn btn-info"
+        onSubmit={handleFormSubmit}>Send request</button>
       </div>
     </div>
   );

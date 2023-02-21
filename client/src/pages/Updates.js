@@ -11,27 +11,27 @@ const Updates = () => {
         return (
             <Carousel>
                 <div>
-                    <img src={family}/>
+                    <img src={family} alt=""/>
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={family1}/>
+                <img src={family1} alt=""/>
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={finish}/>
+                <img src={finish} alt=""/>
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                    <img src={group}/>
+                    <img src={group} alt=""/>
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={kids}/>
+                <img src={kids} alt=""/>
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={kids2}/>
+                <img src={kids2} alt=""/>
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
             </Carousel>
