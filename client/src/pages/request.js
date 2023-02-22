@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_REQUEST } from '../utils/mutations';
 import { QUERY_REQUEST, QUERY_REQUESTS } from '../utils/queries';
 import Logo from "../assets/Logo.jpeg";
+import "../index.css"
 
 const Request = () => {
   const [requestText, setText] = useState('');
