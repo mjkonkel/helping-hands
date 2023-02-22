@@ -12,6 +12,8 @@ The third section provides an area for the family to post medical updates while 
 
 Finally, there is a donation section for the family for those who wish to provide monetary support for necessary costs incurred with illness such as gas, hotel stays, time off work. 
 
+[Visit our deployed app](https://helping-hands.herokuapp.com/)
+
 ## Table of contents 
 
   - [Installation](#installation) 
@@ -30,11 +32,10 @@ Finally, there is a donation section for the family for those who wish to provid
 This app was created using React, CSS, Bootstrap and JavaScript. The app is deployed on Heroku.
 
 ## Usage 
-
+Our app is deployed with heroku. Visit our app [here](https://helping-hands.herokuapp.com/)<br>
+<br>
   Below is a screenshot of how the application appears
   ![]()
-
-https://github.com/mjkonkel/helping-hands
 
  ## Credits
 
