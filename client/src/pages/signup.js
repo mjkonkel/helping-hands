@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import Logo from "../assets/Logo.jpeg";
+import "../index.css"
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -76,7 +77,7 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button className="btn d-block w-100" type="submit">
+                <button className="btn btn-info btn-lg"  type="submit">
                   Submit
                 </button>
               </form>

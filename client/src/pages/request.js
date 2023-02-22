@@ -4,6 +4,8 @@ import { ADD_REQUEST } from '../utils/mutations';
 import { QUERY_ME, QUERY_REQUEST, QUERY_REQUESTS, QUERY_USER } from '../utils/queries';
 import RequestList from '../components/Request';
 import { useParams } from 'react-router-dom';
+import Logo from "../assets/Logo.jpeg";
+import "../index.css";
 
 const Request= () => {
   const [requestText, setText] = useState('');
@@ -66,6 +68,9 @@ const handleFormSubmit = async (event) => {
 
 return (
     <div>
+        <div className="Logo">
+  <img src={Logo} alt="Logo" />
+</div>
       <div className="mb-3">
         <label for="exampleFormControlTextarea1" className="form-label">
         </label>
