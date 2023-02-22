@@ -7,7 +7,8 @@ import Request from './pages/request';
 import Login from './pages/Login';
 import Footer from './components/Footer';
 import Updates from './pages/Updates';
-import Signup from './pages/signup'
+import Signup from './pages/signup';
+import Profile from './pages/Profile'
 
 
 import {
@@ -90,6 +91,11 @@ function App() {
                 path="/updates"
                 element={<Updates />}
               />
+              <Route
+                path="/profile"
+                element={<Profile />}
+              />
+
             </Routes>
 
           </div>
