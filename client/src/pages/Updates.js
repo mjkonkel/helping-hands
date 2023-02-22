@@ -41,7 +41,6 @@ const Updates = () => {
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-
                     <img src={finish} class="d-block w-100" alt="Finish Line" />
                     <p className="photos">Finish Line</p>
                 </div>
@@ -50,7 +49,6 @@ const Updates = () => {
                     <p className="photos">Back row: Gwyn, Issac, Nolan<br></br>
                         Front row: Josie, Will and Bryce</p>
                 </div>
-
                 <div>
                     <img src={group} class="d-block w-100" alt="Group at Race for the cure" />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
@@ -65,9 +63,9 @@ const Updates = () => {
                 </div>
 
             </Carousel >
-            
+
         </div >
-      
+
     );
 };
 
