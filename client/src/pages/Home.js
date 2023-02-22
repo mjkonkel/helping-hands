@@ -1,6 +1,10 @@
 import React from 'react';
+import logo from './logo.png';
 // import NavBar from '../components/NavBar'
-
+function Header() {
+    // Import result is the URL of your image
+    return <img src={logo} alt="Logo" />;
+  }
 const Home = () => {
 return (
     <div>

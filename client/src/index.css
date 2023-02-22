@@ -27,6 +27,10 @@ code {
   --spacing-four: calc(1rem * 1.5);
   --spacing-five: calc(1rem * 3);
 }
+.Logo {
+  background-image: url(./helpingHands.jpeg);
+}
+
 * {
   box-sizing: border-box;
 }
