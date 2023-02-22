@@ -266,3 +266,15 @@ font-size: x-large;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
+
+/*Layout css*/
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-fluid {
+  width: 92%;
+}
