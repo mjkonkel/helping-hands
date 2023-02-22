@@ -24,10 +24,10 @@ const resolvers = {
     },
     user: async (parent, { username }) => {
         console.log('usernameeeee', username )
-      const userData = await User.find({ username, })
+      const userData = await User.findOne({ username })
         .select('-__v -password')
-        .populate('friends')
-        .populate('requests');
+     //   .populate('friends')
+     //   .populate('requests');
         console.log(userData)
         return userData
     },
@@ -60,6 +60,7 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
+//console.log("user", user)
       const token = signToken(user);
       return { token, user };
     },
