@@ -61,7 +61,7 @@ function App() {
                 element={<Home />}
               />
               <Route
-                path="profile"
+                path="/profile"
                 element={<Profile />}
               />
               <Route

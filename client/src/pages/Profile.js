@@ -34,15 +34,15 @@ const Profile = (props) => {
         );
     }
 
-    const handleClick = async () => {
-        try {
-            await addFriend({
-                variables: { id: user._id },
-            });
-        } catch (e) {
-            console.error(e);
-        }
-    };
+    // const handleClick = async () => {
+    //     try {
+    //         await addFriend({
+    //             variables: { id: user._id },
+    //         });
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
+    // };
 
     return (
         <div>
@@ -51,11 +51,11 @@ const Profile = (props) => {
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
                 </h2>
 
-                {userParam && (
+                {/* {userParam && (
                     <button className="btn ml-auto" onClick={handleClick}>
                         Add Friend
                     </button>
-                )}
+                )} */}
             </div>
             <div>hello</div>
         </div>
