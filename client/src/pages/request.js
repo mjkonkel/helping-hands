@@ -1,78 +1,85 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { ADD_REQUEST } from '../utils/mutations';
-import { QUERY_REQUEST, QUERY_REQUESTS } from '../utils/queries';
-import Logo from "../assets/Logo.jpeg";
-import "../index.css"
+import { QUERY_ME, QUERY_REQUEST, QUERY_REQUESTS, QUERY_USER } from '../utils/queries';
+import RequestList from '../components/Request';
+import { useParams } from 'react-router-dom';
 
-const Request = () => {
+const Request= () => {
   const [requestText, setText] = useState('');
 
-  // const [ addRequest ] = useMutation(ADD_REQUEST, {
-  //   update(cache, { data: { addRequest }}){
+// const [ addRequest ] = useMutation(ADD_REQUEST, {
+//   update(cache, { data: { addRequest }}){
 
-  //     try { 
-  //       const { me } = cache.readQuery({query: QUERY_REQUEST});
-  //       cache.writeQuery({ 
-  //         data: { me: { ...me, request: [ ...me.request, 
-  //         addRequest] } },
-  //       });
-  //     } catch (e) { 
-  //       console.warn("Sorry, Request not valid.")
-  //        console.log('testing')
-  //     }
+//     try { 
+//       const { me } = cache.readQuery({query: QUERY_REQUEST});
+//       cache.writeQuery({ 
+//         data: { me: { ...me, request: [ ...me.request, 
+//         addRequest] } },
+//       });
+//     } catch (e) { 
+//       console.warn("Sorry, Request not valid.")
+//        console.log('testing')
+//     }
+    
+//     const { requests } = cache.readQuery({ query:
+//     QUERY_REQUESTS});
+//     cache.writeQuery({ 
+//       query: QUERY_REQUESTS,
+//       data: { requests: [addRequest, ...requests]}
+//     });
+//   }
+// })
 
-  //     const { requests } = cache.readQuery({ query:
-  //     QUERY_REQUESTS});
-  //     cache.writeQuery({ 
-  //       query: QUERY_REQUESTS,
-  //       data: { requests: [addRequest, ...requests]}
-  //     });
-  //   }
-  // })
+// const { username: userParam } = useParams();
+// const { data } = useQuery( userParam  ? QUERY_USER : QUERY_ME, {
+//   variables: { username: userParam },
+// });
+// const user = data?.me || data?.user || {};
 
-  const [addRequest, { error }] = useMutation(ADD_REQUEST)
+const {loading, data } = useQuery( QUERY_REQUESTS )  
+const requests = data?.requests || []
 
-  const handleChange = (event) => {
-    if (event.target.value.length <= 400) {
-      setText(event.target.value);
 
-    }
-  };
+const [ addRequest, { error }  ] = useMutation(ADD_REQUEST)
 
-  const handleFormSubmit = async (event) => {
-    console.log('hello', requestText)
-    try {
-      await addRequest({
-        variables: { requestText },
+const handleChange  = (event) => {
+  if (event.target.value.length <= 400) {
+    setText(event.target.value);
+  }
+};
 
-      });
-      console.log('form sub', requestText)
-      setText('');
-      window.location.reload()
-    } catch (e) {
-      console.error(e)
-    }
-  };
+const handleFormSubmit = async (event) => {
+  console.log('hello',requestText)
+  try { 
+    await addRequest({
+      variables: { requestText },
 
-  return (
-      <div>
-        <div className="Logo">
-          <img src={Logo} alt="Logo" />
-        </div>
-   
+    });
+    console.log('form sub', requestText)
+    setText('');
+    window.location.reload()
+  } catch (e) {
+    console.error(e)
+  }
+};
 
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">
+return (
+    <div>
+      <div className="mb-3">
+        <label for="exampleFormControlTextarea1" className="form-label">
         </label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-          onChange={handleChange}
+        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
+           onChange={handleChange}
         ></textarea>
         <button type="button" class="btn btn-info"
-          onClick={handleFormSubmit}
-
-          value={requestText}
+        onClick={handleFormSubmit}
+        value={requestText}
         >Send request</button>
+      </div>
+      <div>
+        <RequestList
+        requests={requests} />
       </div>
     </div>
   );
