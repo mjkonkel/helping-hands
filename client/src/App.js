@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Updates from './pages/Updates';
 import Signup from './pages/signup';
 import Profile from './pages/Profile'
-
+import NoMatch from './pages/NoMatch';
 
 import {
   ApolloClient,
@@ -88,7 +88,8 @@ function App() {
 
               <Route
 
-                path="*" element={<h1>404 Error Page Does not Exist</h1>} />
+             path="*" element={<NoMatch />} 
+             />
             </Route>
 
           </Routes>
