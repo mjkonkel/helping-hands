@@ -4,6 +4,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
+import Logo from "../assets/Logo.jpeg";
 
 const Profile = (props) => {
     const { username: userParam } = useParams();
@@ -27,10 +28,16 @@ const Profile = (props) => {
 
     if (!user?.username) {
         return (
+<div>
+            <div className="Logo">
+            <img src={Logo} alt="Logo" />
+  
+        </div>
             <h4>
                 You need to be logged in to see this. Use the navigation links above to
                 sign up or log in!
             </h4>
+            </div>
         );
     }
 
@@ -46,6 +53,10 @@ const Profile = (props) => {
 
     return (
         <div>
+            <div className="Logo">
+                <img src={Logo} alt="Logo" />
+            </div>
+
             <div className="flex-row mb-3">
                 <h2 className="bg-dark text-secondary p-3 display-inline-block">
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.

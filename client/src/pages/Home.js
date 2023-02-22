@@ -1,9 +1,6 @@
 import React from 'react';
 // import NavBar from '../components/NavBar'
 import Logo from "../assets/Logo.jpeg";
-import Header from "../components/Header"
-
-console.log(Logo);
 
 const Home = () => {
     return (
