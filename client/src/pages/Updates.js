@@ -1,4 +1,4 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import family from "../assets/family.jpeg"
 import family1 from "../assets/family1.jpeg"
@@ -8,40 +8,48 @@ import kids from "../assets/kids.jpeg"
 import kids2 from "../assets/kids2.jpeg"
 
 const Updates = () => {
-        return (
+
+    return (
+
+        <div>
             <div>
-                <div>
-                    <h1>Hello!</h1>
-                </div>
+                <h1>Updates</h1>
+                <h3>Race for the Cure</h3>
+                <p>
+                    We participated in the Walk for the Cure on Sunday. It is an amazing event, the kids had a lot of fun. My outpatient surgery has been scheduled for Tuesday with radiation to follow next month. Thank you for all of your support it means so much for all of us.
+                </p>
+            </div>
+
             <Carousel>
                 <div>
-                <h1 className="photos">Komen Minnesota Race for the Cure</h1>
-                    <img src={family} alt=""/>
-                    {/* <h1 className="photos">Komen Minnesota Race for the Cure</h1> */}
+                    <img src={finish} />
+                    <p className="photos">Komen Minnesota Race for the Cure</p>
+
                 </div>
+
                 <div>
-                <img src={family1} alt=""/>
+                    <img src={kids} />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={finish} alt=""/>
+                    <img src={kids2} />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                    <img src={group} alt=""/>
+                    <img src={group} />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={kids} alt=""/>
+                    <img src={family} />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
                 <div>
-                <img src={kids2} alt=""/>
+                    <img src={family1} />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
             </Carousel>
-            </div>
-        );
-    };
+        </div>
+    );
+};
 
 export default Updates; 

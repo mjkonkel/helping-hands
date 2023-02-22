@@ -7,7 +7,8 @@ import Request from './pages/request';
 import Login from './pages/Login';
 import Footer from './components/Footer';
 import Updates from './pages/Updates';
-import Signup from './pages/signup'
+import Signup from './pages/signup';
+import Profile from './pages/Profile'
 
 
 import {
@@ -75,10 +76,19 @@ function App() {
                 path="updates"
                 element={<Updates />}
               />
-              <Route path="*" element={<h1>404 Error Page Does not Exist</h1>} />
+
+              <Route
+                path="/profile"
+                element={<Profile />}
+              />
+
+            <Route
+
+             path="*" element={<h1>404 Error Page Does not Exist</h1>} />
             </Route>
 
           </Routes>
+
 
           <footer>
             <Footer></Footer>
