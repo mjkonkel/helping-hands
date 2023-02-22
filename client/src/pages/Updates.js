@@ -9,10 +9,15 @@ import kids2 from "../assets/kids2.jpeg"
 
 const Updates = () => {
         return (
+            <div>
+                <div>
+                    <h1>Hello!</h1>
+                </div>
             <Carousel>
                 <div>
+                <h1 className="photos">Komen Minnesota Race for the Cure</h1>
                     <img src={family} alt=""/>
-                    <p className="photos">Komen Minnesota Race for the Cure</p>
+                    {/* <h1 className="photos">Komen Minnesota Race for the Cure</h1> */}
                 </div>
                 <div>
                 <img src={family1} alt=""/>
@@ -35,6 +40,7 @@ const Updates = () => {
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
             </Carousel>
+            </div>
         );
     };
 

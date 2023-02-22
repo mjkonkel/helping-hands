@@ -56,12 +56,6 @@ export const ADD_REQUEST = gql`
     addRequest(requestText: $requestText) {
       _id
       requestText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-      }
     }
   }
 `;
