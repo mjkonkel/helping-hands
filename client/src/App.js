@@ -54,11 +54,15 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<NavbarHH/>}
+              element={<NavbarHH />}
             >
               <Route
                 path="home"
                 element={<Home />}
+              />
+              <Route
+                path="profile"
+                element={<Profile />}
               />
               <Route
                 path="/signup"
@@ -82,9 +86,9 @@ function App() {
                 element={<Profile />}
               />
 
-            <Route
+              <Route
 
-             path="*" element={<h1>404 Error Page Does not Exist</h1>} />
+                path="*" element={<h1>404 Error Page Does not Exist</h1>} />
             </Route>
 
           </Routes>
