@@ -9,6 +9,7 @@ import Logo from "../assets/Logo.jpeg";
 const Profile = (props) => {
     const [username, setUsername] = useState(Auth.getProfile().data.username)
     // const { username: userParam } = useParams();
+    // console.log(username)
 
     const [addFriend] = useMutation(ADD_FRIEND);
     // const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
@@ -17,11 +18,11 @@ const Profile = (props) => {
     const { loading, data } = useQuery(QUERY_USER, {
         variables: { username: "Molly48" }
     })
-    console.log("data", data)
-    const user = data?.me || data?.user || {};
-    console.log("user", user)
-    console.log("login", Auth.loggedIn());
-    console.log("getprofile", Auth.getProfile());
+    // console.log("data", data)
+    // const user = data?.me || data?.user || {};
+    // console.log("user", user)
+    // console.log("login", Auth.loggedIn());
+    // console.log("getprofile", Auth.getProfile());
     // navigate to personal profile page if username is yours
     //  console.log("userParam", userParam)
     // if (Auth.loggedIn()) {
@@ -65,7 +66,7 @@ const Profile = (props) => {
 
             <div className="flex-row mb-3">
                 <h2 className="bg-dark text-secondary p-3 display-inline-block">
-                    Viewing {useParams ? `${user.username}'s` : 'your'} profile.
+                    Viewing {username}'s profile.
                 </h2>
 
                 {useParams && (
@@ -74,7 +75,7 @@ const Profile = (props) => {
                     </button>
                 )}
             </div>
-            <div>hello</div>
+            <div>Hello {username}</div>
         </div>
     );
 };
