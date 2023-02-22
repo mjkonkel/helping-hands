@@ -3,6 +3,8 @@
 // import Navbar from 'react-bootstrap/Navbar';
 import { Outlet, Link } from 'react-router-dom';
 import React from 'react'
+import "../../index.css"
+
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavbarHH() {
@@ -37,7 +39,6 @@ function NavbarHH() {
 
   );
 }
-
 
 
 export default NavbarHH;

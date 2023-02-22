@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -7,40 +7,47 @@ import Auth from '../utils/auth';
 import Logo from "../assets/Logo.jpeg";
 
 const Profile = (props) => {
-    const { username: userParam } = useParams();
+    const [username, setUsername] = useState(Auth.getProfile().data.username) 
+   // const { username: userParam } = useParams();
 
     const [addFriend] = useMutation(ADD_FRIEND);
-    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-        variables: { username: userParam },
-    });
-
+    // const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
+    //     variables: { username },
+    // });
+    const {loading, data}=useQuery(QUERY_USER, {
+        variables:{username:"Molly48"}
+    })
+console.log("data", data)
     const user = data?.me || data?.user || {};
+     console.log("user", user)
     console.log("login", Auth.loggedIn());
     console.log("getprofile", Auth.getProfile());
     // navigate to personal profile page if username is yours
-    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-        return <Navigate to="/profile" />;
-    }
+  //  console.log("userParam", userParam)
+    // if (Auth.loggedIn()) {
+    //       return <Navigate to="/profile" />;
+    //  }
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
 
-    if (!user?.username) {
-        return (
-<div>
-            <div className="Logo">
-            <img src={Logo} alt="Logo" />
-  
-        </div>
-            <h4>
-                You need to be logged in to see this. Use the navigation links above to
-                sign up or log in!
-            </h4>
-            </div>
-        );
-    }
+    // if (!user?.username) {
+    //     return (
+    //         <div>
+    //             <div className="Logo">
+    //                 <img src={Logo} alt="Logo" />
 
+    //             </div>
+    //             <h4>
+    //                 You need to be logged in to see this. Use the navigation links above to
+    //                 sign up or log in!
+    //             </h4>
+    //         </div>
+    //     );
+    // }
+
+<<<<<<< HEAD
     // const handleClick = async () => {
     //     try {
     //         await addFriend({
@@ -50,6 +57,17 @@ const Profile = (props) => {
     //         console.error(e);
     //     }
     // };
+=======
+    const handleClick = async () => {
+        try {
+            // await addFriend({
+            //     variables: { id: user._id },
+            // });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+>>>>>>> c314b54ce3bca07873285d342ac732f3257367e4
 
     return (
         <div>
@@ -58,9 +76,9 @@ const Profile = (props) => {
             </div>
 
             <div className="flex-row mb-3">
-                <h2 className="bg-dark text-secondary p-3 display-inline-block">
+                {/* <h2 className="bg-dark text-secondary p-3 display-inline-block">
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-                </h2>
+                </h2> */}
 
                 {/* {userParam && (
                     <button className="btn ml-auto" onClick={handleClick}>

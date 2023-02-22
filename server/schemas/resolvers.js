@@ -23,14 +23,17 @@ const resolvers = {
         .populate('friends');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username })
+        console.log('usernameeeee', username )
+      const userData = await User.findOne({ username })
         .select('-__v -password')
-        .populate('friends')
-        .populate('requests');
+     //   .populate('friends')
+     //   .populate('requests');
+        console.log(userData)
+        return userData
     },
     requests: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Request.find(params).sort({ createdAt: -1 });
+     
+      return Request.find().sort({ createdAt: -1 });
     },
     request: async (parent, { _id }) => {
       return Request.findOne({ _id });
@@ -57,6 +60,7 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
+//console.log("user", user)
       const token = signToken(user);
       return { token, user };
     },
