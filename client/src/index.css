@@ -295,3 +295,28 @@ font-size: x-large;
 .display-inline {
   display: inline;
 }
+
+/* HEIGHT / WIDTH UTILS Css */
+.w-100 {
+  width: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.min-100-vh {
+  min-height: 100vh;
+}
+
+.min-100-vw {
+  min-width: 100vw;
+}
