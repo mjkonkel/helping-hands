@@ -22,9 +22,11 @@ const Updates = () => {
 
             <Carousel>
                 <div>
-                    <img src={finish} />
-                    <p className="photos">Komen Minnesota Race for the Cure</p>
 
+                
+                <h1 className="photos">Komen Minnesota Race for the Cure</h1>
+                    <img src={family} />
+                    {/* <h1 className="photos">Komen Minnesota Race for the Cure</h1> */}
                 </div>
 
                 <div>

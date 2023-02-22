@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NavbarHH from './components/NavBar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from '../src/pages/Home'
