@@ -813,3 +813,24 @@ font-size: x-large;
 .text-error {
   color: var(--error);
 }
+
+/* BACKGROUND UTILS */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--tertiary);
+}
+
+.bg-light {
+  background-color: var(--light);
+}
+
+.bg-dark {
+  background-color: var(--dark);
+}
