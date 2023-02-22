@@ -37,10 +37,6 @@ const Updates = () => {
                     <p className="photos">Will and Gwyn</p>
                 </div>
                 <div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 071e20f2c51ee8b83217841632a8c9fa706391e3
                     <img src={family} class="d-block w-100" alt="Family at Race for the cure" />
                     <p className="photos">Komen Minnesota Race for the Cure</p>
                 </div>
