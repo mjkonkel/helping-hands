@@ -98,6 +98,20 @@ nav {
   justify-content: center;
 }
 
+/* Navigation Bar*/
+nav {
+  display: flex;
+  background-color: rgb(202, 240, 248);
+  /* justify-content: flex-end; */
+  flex-wrap: wrap;
+  /* align-items: center; */
+  color: rgb(3, 4, 94);
+  font-size: larger;
+  padding: 1rem;
+}
+
+
+
 nav a {
   padding: 6px 10px;
   margin: 0 15px;
