@@ -278,3 +278,20 @@ font-size: x-large;
 .container-fluid {
   width: 92%;
 }
+
+/* DISPLAY */
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-inline {
+  display: inline;
+}
