@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Nav from './components/NavBar';
+import NavbarHH from './components/NavBar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from '../src/pages/Home'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -43,36 +43,21 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [categories] = useState([
-    {
-      name: 'Updates',
-      description: 'Get updates and stay informed of the people you are caring for!',
-    },
-    {
-      name: 'Photos',
-      description: 'Photos of the people you how they are doing!',
-    },
-  ]);
-
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
-  const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <ApolloProvider client={client}>
+
       <Router>
         <div>
-          <Nav
-            categories={categories}
-            setCurrentCategory={setCurrentCategory}
-            currentCategory={currentCategory}
-            contactSelected={contactSelected}
-            setContactSelected={setContactSelected}
-          ></Nav>
-          <div>
-            <Routes>
+          {/* <Navbar></Navbar> */}
+
+          <Routes>
+            <Route
+              path="/"
+              element={<NavbarHH/>}
+            >
               <Route
-                path="/"
+                path="home"
                 element={<Home />}
               />
               <Route
@@ -80,25 +65,31 @@ function App() {
                 element={<Signup />}
               />
               <Route
-                path="/login"
+                path="login"
                 element={<Login />}
               />
               <Route
-                path="/request"
+                path="request"
                 element={<Request />}
               />
               <Route
-                path="/updates"
+                path="updates"
                 element={<Updates />}
               />
+
               <Route
                 path="/profile"
                 element={<Profile />}
               />
 
-            </Routes>
+            <Route
 
-          </div>
+             path="*" element={<h1>404 Error Page Does not Exist</h1>} />
+            </Route>
+
+          </Routes>
+
+
           <footer>
             <Footer></Footer>
           </footer>
@@ -106,6 +97,7 @@ function App() {
 
         </div>
       </Router>
+
     </ApolloProvider>
   );
 };
