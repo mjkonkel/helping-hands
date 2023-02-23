@@ -27,7 +27,7 @@ const resolvers = {
       const userData = await User.findOne({ username })
         .select('-__v -password')
      //   .populate('friends')
-     //   .populate('requests');
+       .populate('requests');
         console.log(userData)
         return userData
     },

@@ -29,6 +29,19 @@ export const QUERY_REQUEST = gql`
   }
 `;
 
+export const QUERY_ALL_USERS = gql`
+ query   users {
+  users { 
+  _id
+    email
+    friendCount
+    username
+  }
+  }
+`;
+
+
+
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -44,7 +57,7 @@ export const QUERY_USER = gql`
         _id
         requestText
         createdAt
-        reactionCount
+ 
       }
     }
   }
