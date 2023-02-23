@@ -49,17 +49,22 @@ function App() {
 
       <Router>
         <div>
-          {/* <Navbar></Navbar> */}
 
           <Routes>
             <Route
               path="/"
               element={<NavbarHH />}
             >
-              <Route
-                path="/home"
+              {/* <Route
+                path="/"
                 element={<Home />}
-              />
+              /> */}
+
+              <Route path="/">
+                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
+              </Route>
+
               <Route
                 path="/profile"
                 element={<Profile />}
@@ -81,7 +86,7 @@ function App() {
                 element={<Updates />}
               />
 
-              <Route path ="/profile"> 
+              <Route path="/profile">
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
               </Route>
