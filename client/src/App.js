@@ -57,7 +57,7 @@ function App() {
               element={<NavbarHH />}
             >
               <Route
-                path="/"
+                path="/home"
                 element={<Home />}
               />
               <Route
