@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_USER, QUERY_ME, QUERY_REQUESTS } from '../utils/queries';
 import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
 import Logo from "../assets/Logo.jpeg";
 
 const Profile = (props) => {
+    const { username: userParam } = useParams();
+
     const [username, setUsername] = useState(Auth.getProfile().data.username)
 
+    const { loading, error, data } = useQuery( userParam ? QUERY_USER : QUERY_ME, {
+        variables: { username: userParam },
+      });
+
+    const user = data?.me || data?.user || {};
+
+    console.log(username)
+    console.log(data)
 
     // const handleClick = async () => {
     //     try {
@@ -19,6 +29,16 @@ const Profile = (props) => {
     //         console.error(e);
     //     }
     // };
+    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+        return <Navigate to="/profile" />;
+      }
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    if (error) {
+        return <div>ERROR...</div>;
+    }
 
     return (
         <div>
@@ -37,7 +57,7 @@ const Profile = (props) => {
                     </button>
                 )} */}
             </div>
-            <div>Hello {username}</div>
+            <div>Welcome {username}</div>
         </div>
     );
 };

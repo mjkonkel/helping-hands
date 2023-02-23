@@ -81,15 +81,16 @@ function App() {
                 element={<Updates />}
               />
 
+              <Route path ="/profile"> 
+                <Route path=":username" element={<Profile />} />
+                <Route path="" element={<Profile />} />
+              </Route>
+
+
               <Route
-                path="/profile"
-                element={<Profile />}
+
+                path="*" element={<NoMatch />}
               />
-
-              <Route
-
-             path="*" element={<NoMatch />} 
-             />
             </Route>
 
           </Routes>
