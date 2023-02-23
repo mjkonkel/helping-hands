@@ -15,21 +15,15 @@ function NavbarHH() {
         <ul>
           <li>
             <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link to="/signup">Sign up!</Link>
-          </li>
-          <li>
-            <Link to="/login">login</Link>
-          </li>
-          <li>
-            <Link to="/request">request</Link>
-          </li>
-          <li>
-            <Link to="/updates">updates</Link>
+        
+            <Link to="/signup">Sign Up</Link>
+         
+            <Link to="/login">Login</Link>
+         
+            <Link to="/request">Requests</Link>
+     
+            <Link to="/updates">Updates</Link>
+
           </li>
         </ul>
       </nav>
