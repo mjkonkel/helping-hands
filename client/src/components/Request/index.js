@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const RequestList = ({ requests }) => {
   console.log("this is all the requests", requests)
 

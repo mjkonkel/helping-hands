@@ -41,7 +41,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
 
   return (
@@ -55,10 +54,6 @@ function App() {
               path="/"
               element={<NavbarHH />}
             >
-              {/* <Route
-                path="/"
-                element={<Home />}
-              /> */}
 
               <Route path="/">
                 <Route path="/home" element={<Home />} />
@@ -91,7 +86,6 @@ function App() {
                 <Route path="" element={<Profile />} />
               </Route>
 
-
               <Route
 
                 path="*" element={<NoMatch />}
@@ -100,11 +94,9 @@ function App() {
 
           </Routes>
 
-
           <footer>
             <Footer></Footer>
           </footer>
-
 
         </div>
       </Router>

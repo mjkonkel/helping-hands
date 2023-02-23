@@ -44,7 +44,7 @@ const Signup = () => {
       <div className="Logo">
         <img src={Logo} alt="Logo" />
       </div>
-<br></br>
+      <br></br>
       <main className="flex-row justify-center mb-4">
         <div className="col-12 col-md-6">
           <div className="card">
@@ -78,13 +78,13 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button className="btn btn-info btn-lg"  type="submit">
+                <button className="btn btn-info btn-lg" type="submit">
                   Submit
                 </button>
               </form>
-<div>
-  <br></br>Already a member? <Link to="/login">Login now!</Link>
-</div>
+              <div>
+                <br></br>Already a member? <Link to="/login">Login now!</Link>
+              </div>
               {error && <div>Signup failed</div>}
             </div>
           </div>
