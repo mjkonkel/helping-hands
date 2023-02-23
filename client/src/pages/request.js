@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_REQUEST } from '../utils/mutations';
-import { QUERY_ME, QUERY_REQUEST, QUERY_REQUESTS, QUERY_USER } from '../utils/queries';
+import { QUERY_REQUESTS } from '../utils/queries';
 import RequestList from '../components/Request';
-import { useParams } from 'react-router-dom';
+
 import Logo from "../assets/Logo.jpeg";
 import "../index.css";
 
