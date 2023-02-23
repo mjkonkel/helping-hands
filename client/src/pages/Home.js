@@ -9,6 +9,7 @@ const Home = () => {
             <div className="Logo">
                 <img src={Logo} alt="Logo" />
             </div>
+            <br></br>
             <div class="container-fluid">
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
