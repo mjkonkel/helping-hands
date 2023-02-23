@@ -35,7 +35,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  
 }
 h1,
 h2,
@@ -197,6 +197,14 @@ nav a:hover {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
+  display: flex;
+  background-color: rgb(202, 240, 248);
+  /* justify-content: flex-end; */
+  flex-wrap: wrap;
+  /* align-items: center; */
+  color: rgb(3, 4, 94);
+  font-size: larger;
+  padding: 1rem;
 }
 
 /* FORM */
@@ -280,11 +288,15 @@ nav a:hover {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  background-color: rgb(0, 180, 216);
 }
 
 .container-fluid {
   width: 92%;
+  background-color: rgb(0, 180, 216);
 }
+
+
 
 /* DISPLAY */
 .display-none {
