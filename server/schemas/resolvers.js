@@ -13,7 +13,6 @@ const resolvers = {
 
         return userData;
       }
-
       throw new AuthenticationError('Not logged in');
     },
     users: async () => {
@@ -23,16 +22,15 @@ const resolvers = {
         .populate('friends');
     },
     user: async (parent, { username }) => {
-        console.log('usernameeeee', username )
+      console.log('usernameeeee', username)
       const userData = await User.findOne({ username })
         .select('-__v -password')
-     //   .populate('friends')
-       .populate('requests');
-        console.log(userData)
-        return userData
+        .populate('requests');
+      console.log(userData)
+      return userData
     },
     requests: async (parent, { username }) => {
-     
+
       return Request.find().sort({ createdAt: -1 });
     },
     request: async (parent, { _id }) => {
@@ -60,7 +58,6 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
-//console.log("user", user)
       const token = signToken(user);
       return { token, user };
     },

@@ -12,25 +12,14 @@ const Profile = (props) => {
     console.log(userParam)
     const [username, setUsername] = useState(Auth.getProfile().data.username)
 
-    const { loading, error, data } = useQuery( QUERY_USER,{variables: {username:"test1"}});
+    const { loading, error, data } = useQuery(QUERY_USER, { variables: { username: "test1" } });
 
     const user = data?.me || data?.user || {};
-
-    // console.log(username)
     console.log(user)
 
-    // const handleClick = async () => {
-    //     try {
-    //         // await addFriend({
-    //         //     variables: { id: user._id },
-    //         // });
-    //     } catch (e) {
-    //         console.error(e);
-    //     }
-    // };
     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
         return <Navigate to="/profile" />;
-      }
+    }
 
     if (loading) {
         return <div>Loading...</div>;
@@ -45,17 +34,15 @@ const Profile = (props) => {
                 <img src={Logo} alt="Logo" />
             </div>
 
-            <div className="flex-row mb-3">
-                <h2 className="bg-dark text-secondary p-3 display-inline-block">
-                    Viewing {username}'s profile.
-                </h2>
-                <div className="col-12 col-lg-3 mb-3">
-          <RequestList
-            requests = {user.requests}
-          />  
+            <div className="flex-row">
+                <div className="col-12 col-lg-4 mb-3">
+                    <RequestList
+                        requests={user.requests}
+                    />
+                </div>
+                <br></br>
+                <h2 className="flex-row mb-3">Welcome to Helping Hands {username}.</h2>
             </div>
-            <div>Welcome {username}</div>
-        </div>
         </div>
     );
 };

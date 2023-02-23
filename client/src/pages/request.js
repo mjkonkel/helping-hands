@@ -10,35 +10,6 @@ import "../index.css";
 const Request = () => {
   const [requestText, setText] = useState('');
 
-  // const [ addRequest ] = useMutation(ADD_REQUEST, {
-  //   update(cache, { data: { addRequest }}){
-
-  //     try { 
-  //       const { me } = cache.readQuery({query: QUERY_REQUEST});
-  //       cache.writeQuery({ 
-  //         data: { me: { ...me, request: [ ...me.request, 
-  //         addRequest] } },
-  //       });
-  //     } catch (e) { 
-  //       console.warn("Sorry, Request not valid.")
-  //        console.log('testing')
-  //     }
-
-  //     const { requests } = cache.readQuery({ query:
-  //     QUERY_REQUESTS});
-  //     cache.writeQuery({ 
-  //       query: QUERY_REQUESTS,
-  //       data: { requests: [addRequest, ...requests]}
-  //     });
-  //   }
-  // })
-
-  // const { username: userParam } = useParams();
-  // const { data } = useQuery( userParam  ? QUERY_USER : QUERY_ME, {
-  //   variables: { username: userParam },
-  // });
-  // const user = data?.me || data?.user || {};
-
   const { loading, data } = useQuery(QUERY_REQUESTS)
   const requests = data?.requests || []
 

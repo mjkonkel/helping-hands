@@ -1,4 +1,3 @@
-// const faker = require('faker');
 const userSeeds = require('./userSeed.json');
 const requestSeeds = require('./requestSeed.json');
 const db = require('../config/connection');
