@@ -15,6 +15,8 @@ function NavbarHH() {
         <ul>
           <li>
             <Link to="/home">Home</Link>
+
+            <Link to="/profile">Profile</Link>
         
             <Link to="/signup">Sign Up</Link>
          
