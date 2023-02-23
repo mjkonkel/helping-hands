@@ -20,7 +20,7 @@ function NavbarHH() {
          
             <Link to="/login">Login</Link>
          
-            <Link to="/request">Request</Link>
+            <Link to="/request">Requests</Link>
      
             <Link to="/updates">Updates</Link>
           </li>

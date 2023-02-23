@@ -4,6 +4,7 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import Logo from "../assets/Logo.jpeg";
 import "../index.css"
+import { Outlet, Link } from 'react-router-dom';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -43,11 +44,11 @@ const Signup = () => {
       <div className="Logo">
         <img src={Logo} alt="Logo" />
       </div>
-
+<br></br>
       <main className="flex-row justify-center mb-4">
         <div className="col-12 col-md-6">
           <div className="card">
-            <h4 className="card-header">Sign Up</h4>
+            <h4 className="card-header bg-info text-white">Sign Up</h4>
             <div className="card-body">
               <form onSubmit={handleFormSubmit}>
                 <input
@@ -81,7 +82,9 @@ const Signup = () => {
                   Submit
                 </button>
               </form>
-
+<div>
+  <br></br>Already a member? <Link to="/login">Login now!</Link>
+</div>
               {error && <div>Signup failed</div>}
             </div>
           </div>

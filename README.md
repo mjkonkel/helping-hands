@@ -34,8 +34,9 @@ This app was created using React, CSS, Bootstrap and JavaScript. The app is depl
 ## Usage 
 Our app is deployed with heroku. Visit our app [here](https://helping-hands.herokuapp.com/)<br>
 <br>
-  Below is a screenshot of how the application appears
-  ![]()
+  Below is a screenshot of how the application appears.
+
+     ![alt Helping Hands Homepage](src/assets/helpingHandsScreenshot.png)
 
  ## Credits
 
